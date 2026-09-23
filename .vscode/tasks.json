@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Workbench POC",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/dev.mjs"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

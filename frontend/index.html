@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ba272e">
+  <title>Workbench | Tools for the job</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/config.js"></script>
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="utility"><div class="shell"><span>THE WORKSHOP SUPPLY STORE</span><span>Local POC <span aria-hidden="true">/</span> Mock payments only</span></div></div>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="#/" aria-label="Workbench home"><span class="brand-mark" aria-hidden="true">W<span>.</span></span><span>WORKBENCH<small>TOOLS FOR THE JOB.</small></span></a>
+    <nav aria-label="Main navigation"><a href="#/catalog" data-nav="catalog">Browse tools</a><a href="#/orders" data-nav="orders">Order history</a><a class="cart-link" href="#/cart" data-nav="cart">Cart <span id="cart-count" class="count">0</span></a></nav>
+  </div></header>
+  <main id="main" class="shell" tabindex="-1"><div class="loading" role="status">Opening the workshop...</div></main>
+  <footer class="shell footer"><a class="footer-brand" href="#/">WORKBENCH<span>.</span></a><span>Independent local demo. Not affiliated with Bosch.</span><a id="api-link" href="#">API contract</a></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="image-dialog"><button class="icon-button close-dialog" aria-label="Close image" title="Close image">&times;</button><div id="dialog-image"></div></dialog>
+</body>
+</html>

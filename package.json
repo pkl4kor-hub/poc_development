@@ -1,0 +1,14 @@
+{
+  "name": "workbench-tools-poc",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node scripts/dev.mjs",
+    "start:api": "node backend/server.mjs",
+    "start:web": "node frontend/server.mjs",
+    "test": "node --test backend/test/*.test.mjs",
+    "check": "node --check frontend/app.js && node --check backend/server.mjs && node --check frontend/server.mjs"
+  }
+}
