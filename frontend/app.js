@@ -282,4 +282,156 @@ document.addEventListener('change', async event => {
 
 document.querySelector('#api-link').href = `${API}/openapi.json`;
 window.addEventListener('hashchange', render);
+
+/* =========================================================
+   Profile / Login Dropdown & Authentication
+   ========================================================= */
+const profileBtn = document.querySelector('#profile-btn');
+const profileDropdown = document.querySelector('#profile-dropdown');
+const profileLabel = document.querySelector('#profile-label');
+const profileCurrentUser = document.querySelector('#profile-current-user');
+const logoutBtn = document.querySelector('#logout-btn');
+
+function updateAuthUI(user) {
+  if (user && user.authenticated) {
+    profileLabel.textContent = user.username.charAt(0).toUpperCase() + user.username.slice(1);
+    profileCurrentUser.innerHTML = `Logged in as: <strong>${escape(user.username)}</strong> (${escape(user.role)})`;
+    logoutBtn.hidden = false;
+  } else {
+    profileLabel.textContent = 'Profile';
+    profileCurrentUser.innerHTML = 'Logged in as: <strong>Guest Buyer</strong>';
+    logoutBtn.hidden = true;
+  }
+}
+
+async function checkAuth() {
+  try {
+    const user = await api('/auth/me');
+    updateAuthUI(user);
+  } catch {
+    updateAuthUI(null);
+  }
+}
+
+profileBtn?.addEventListener('click', event => {
+  event.stopPropagation();
+  const isExpanded = profileBtn.getAttribute('aria-expanded') === 'true';
+  profileBtn.setAttribute('aria-expanded', String(!isExpanded));
+  profileBtn.classList.toggle('active', !isExpanded);
+  profileDropdown.hidden = isExpanded;
+});
+
+document.addEventListener('click', event => {
+  if (profileDropdown && !profileDropdown.hidden && !event.target.closest('.profile-container')) {
+    profileDropdown.hidden = true;
+    profileBtn.setAttribute('aria-expanded', 'false');
+    profileBtn.classList.remove('active');
+  }
+});
+
+document.querySelectorAll('.quick-login-btn').forEach(btn => {
+  btn.addEventListener('click', async event => {
+    event.stopPropagation();
+    const row = btn.closest('.cred-row');
+    const username = row.dataset.user;
+    const password = row.dataset.pass;
+    btn.disabled = true;
+    btn.textContent = 'Signing in...';
+    try {
+      const response = await api('/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({ username, password })
+      });
+      updateAuthUI(response);
+      profileDropdown.hidden = true;
+      profileBtn.setAttribute('aria-expanded', 'false');
+      profileBtn.classList.remove('active');
+      toast(`Signed in as ${response.username} (${response.role})`);
+      await render();
+    } catch (err) {
+      showError(err);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Login';
+    }
+  });
+});
+
+logoutBtn?.addEventListener('click', async event => {
+  event.stopPropagation();
+  try {
+    await api('/auth/logout', { method: 'POST' });
+    updateAuthUI(null);
+    profileDropdown.hidden = true;
+    profileBtn.setAttribute('aria-expanded', 'false');
+    profileBtn.classList.remove('active');
+    toast('Logged out successfully.');
+    await render();
+  } catch (err) {
+    showError(err);
+  }
+});
+
+/* =========================================================
+   Smart Assistant Widget & Rule-Based Interaction
+   ========================================================= */
+const assistantToggle = document.querySelector('#assistant-toggle');
+const assistantPanel = document.querySelector('#assistant-panel');
+const assistantClose = document.querySelector('#assistant-close');
+const assistantForm = document.querySelector('#assistant-form');
+const assistantInput = document.querySelector('#assistant-input');
+const assistantMessages = document.querySelector('#assistant-messages');
+
+function appendAssistantMessage(text, type = 'bot') {
+  const msgEl = document.createElement('div');
+  msgEl.className = `assistant-msg ${type}`;
+  const p = document.createElement('p');
+  p.textContent = text;
+  msgEl.appendChild(p);
+  assistantMessages.appendChild(msgEl);
+  assistantMessages.scrollTop = assistantMessages.scrollHeight;
+}
+
+assistantToggle?.addEventListener('click', () => {
+  const isHidden = assistantPanel.hidden;
+  assistantPanel.hidden = !isHidden;
+  assistantToggle.setAttribute('aria-expanded', String(isHidden));
+  if (isHidden) assistantInput.focus();
+});
+
+assistantClose?.addEventListener('click', () => {
+  assistantPanel.hidden = true;
+  assistantToggle.setAttribute('aria-expanded', 'false');
+});
+
+async function askAssistant(question) {
+  if (!question || !question.trim()) return;
+  appendAssistantMessage(question, 'user');
+  try {
+    const res = await fetch(`${API}/chatbot/message`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: question })
+    });
+    const data = await res.json();
+    appendAssistantMessage(data.reply || "I'm here to assist you with tools, shopping, or your demo account!");
+  } catch {
+    appendAssistantMessage("I'm unable to reach the workshop assistant server right now. Please check if the backend is running.");
+  }
+}
+
+assistantForm?.addEventListener('submit', event => {
+  event.preventDefault();
+  const q = assistantInput.value;
+  assistantInput.value = '';
+  askAssistant(q);
+});
+
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    askAssistant(chip.dataset.chip);
+  });
+});
+
+checkAuth();
 render();

@@ -15,11 +15,95 @@
   <div class="utility"><div class="shell"><span>THE WORKSHOP SUPPLY STORE</span><span>Local POC <span aria-hidden="true">/</span> Mock payments only</span></div></div>
   <header class="site-header"><div class="shell header-inner">
     <a class="brand" href="#/" aria-label="Workbench home"><span class="brand-mark" aria-hidden="true">W<span>.</span></span><span>WORKBENCH<small>TOOLS FOR THE JOB.</small></span></a>
-    <nav aria-label="Main navigation"><a href="#/catalog" data-nav="catalog">Browse tools</a><a href="#/orders" data-nav="orders">Order history</a><a class="cart-link" href="#/cart" data-nav="cart">Cart <span id="cart-count" class="count">0</span></a></nav>
+    <nav aria-label="Main navigation">
+      <a href="#/catalog" data-nav="catalog">Browse tools</a>
+      <a href="#/orders" data-nav="orders">Order history</a>
+      <a class="cart-link" href="#/cart" data-nav="cart">Cart <span id="cart-count" class="count">0</span></a>
+      <div class="profile-container">
+        <button id="profile-btn" class="profile-btn" aria-haspopup="dialog" aria-expanded="false" title="Account profile and login">
+          <svg class="profile-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+          </svg>
+          <span id="profile-label">Profile</span>
+        </button>
+        <div id="profile-dropdown" class="profile-dropdown" hidden>
+          <div class="profile-header">
+            <strong>Demo Accounts</strong>
+            <p class="profile-sub">Quick switch or sign in</p>
+          </div>
+          <div class="profile-current" id="profile-current-user">
+            Logged in as: <strong>Buyer</strong>
+          </div>
+          <div class="credentials-card">
+            <div class="cred-row" data-role="buyer" data-user="buyer" data-pass="Buyer@123">
+              <div>
+                <strong>Buyer</strong>
+                <small>buyer / Buyer@123</small>
+              </div>
+              <button class="button small-btn quick-login-btn" data-login-as="buyer">Login</button>
+            </div>
+            <div class="cred-row" data-role="seller" data-user="seller" data-pass="Seller@123">
+              <div>
+                <strong>Seller</strong>
+                <small>seller / Seller@123</small>
+              </div>
+              <button class="button small-btn quick-login-btn" data-login-as="seller">Login</button>
+            </div>
+            <div class="cred-row" data-role="admin" data-user="admin" data-pass="Admin@123">
+              <div>
+                <strong>Admin</strong>
+                <small>admin / Admin@123</small>
+              </div>
+              <button class="button small-btn quick-login-btn" data-login-as="admin">Login</button>
+            </div>
+          </div>
+          <button id="logout-btn" class="text-button logout-btn">Log out</button>
+        </div>
+      </div>
+    </nav>
   </div></header>
   <main id="main" class="shell" tabindex="-1"><div class="loading" role="status">Opening the workshop...</div></main>
   <footer class="shell footer"><a class="footer-brand" href="#/">WORKBENCH<span>.</span></a><span>Independent local demo. Not affiliated with Bosch.</span><a id="api-link" href="#">API contract</a></footer>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   <dialog id="image-dialog"><button class="icon-button close-dialog" aria-label="Close image" title="Close image">&times;</button><div id="dialog-image"></div></dialog>
+
+  <!-- Smart Assistant Widget -->
+  <aside class="assistant-widget" aria-label="Smart workshop assistant">
+    <div id="assistant-panel" class="assistant-panel" hidden>
+      <header class="assistant-header">
+        <div class="assistant-title-group">
+          <span class="assistant-badge" aria-hidden="true">🤖</span>
+          <div>
+            <strong>Workbench Assistant</strong>
+            <small>Rule-based Workshop AI</small>
+          </div>
+        </div>
+        <button id="assistant-close" class="icon-button" aria-label="Close assistant" title="Close assistant">&times;</button>
+      </header>
+
+      <div id="assistant-messages" class="assistant-messages" role="log" aria-live="polite">
+        <div class="assistant-msg bot">
+          <p>Hello! How can I assist you with your workshop tools today?</p>
+        </div>
+      </div>
+
+      <div class="assistant-suggestions" aria-label="Suggested questions">
+        <button class="chip" data-chip="What drill should I buy?">Recommend a drill</button>
+        <button class="chip" data-chip="How much is shipping?">Delivery rates</button>
+        <button class="chip" data-chip="What saw do you recommend?">Saws for timber</button>
+        <button class="chip" data-chip="What accounts can I test?">Demo logins</button>
+      </div>
+
+      <form id="assistant-form" class="assistant-input-bar">
+        <input id="assistant-input" type="text" placeholder="Ask how I can assist you..." aria-label="Ask assistant" maxlength="200" required autocomplete="off">
+        <button class="button primary small-btn" type="submit" aria-label="Send message">Send</button>
+      </form>
+    </div>
+
+    <button id="assistant-toggle" class="assistant-toggle" aria-expanded="false" aria-label="Open Workbench Smart Assistant" title="Open Workbench Smart Assistant">
+      <span class="assistant-icon" aria-hidden="true">💬</span>
+      <span class="assistant-label">Assistant</span>
+    </button>
+  </aside>
 </body>
 </html>
