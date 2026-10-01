@@ -1,0 +1,14 @@
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\ApiErrorResponse.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\CartDto.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\CartResponse.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\ChatbotRequest.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\ChatbotResponse.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\CheckoutRequest.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\LoginRequest.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\LoginResponse.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\OrderResponse.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\PaymentChargeRequest.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\PaymentResponse.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\ProductDto.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\ProductResponse.java
+C:\bosch\poc\microservices\common\src\main\java\com\ecommerce\microservices\common\dto\StockReservationRequest.java

@@ -1,0 +1,6 @@
+com\ecommerce\microservices\cart\repository\CartRepository.class
+com\ecommerce\microservices\cart\entity\Cart.class
+com\ecommerce\microservices\cart\controller\CartController.class
+com\ecommerce\microservices\cart\entity\CartItem.class
+com\ecommerce\microservices\cart\service\CartService.class
+com\ecommerce\microservices\cart\CartServiceApplication.class

@@ -1,0 +1,8 @@
+com\ecommerce\microservices\auth\entity\UserSession.class
+com\ecommerce\microservices\auth\controller\AuthController.class
+com\ecommerce\microservices\auth\entity\User.class
+com\ecommerce\microservices\auth\config\DataInitializer.class
+com\ecommerce\microservices\auth\repository\UserSessionRepository.class
+com\ecommerce\microservices\auth\repository\UserRepository.class
+com\ecommerce\microservices\auth\AuthServiceApplication.class
+com\ecommerce\microservices\auth\service\AuthService.class

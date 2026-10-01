@@ -1,0 +1,13 @@
+com\ecommerce\microservices\catalog\service\CatalogService$6.class
+com\ecommerce\microservices\catalog\CatalogServiceApplication.class
+com\ecommerce\microservices\catalog\service\CatalogService$3.class
+com\ecommerce\microservices\catalog\repository\ProductRepository.class
+com\ecommerce\microservices\catalog\entity\Product.class
+com\ecommerce\microservices\catalog\controller\CatalogController.class
+com\ecommerce\microservices\catalog\service\CatalogService$4.class
+com\ecommerce\microservices\catalog\config\DataInitializer.class
+com\ecommerce\microservices\catalog\service\CatalogService$2.class
+com\ecommerce\microservices\catalog\controller\ChatbotController.class
+com\ecommerce\microservices\catalog\service\CatalogService$5.class
+com\ecommerce\microservices\catalog\service\CatalogService$1.class
+com\ecommerce\microservices\catalog\service\CatalogService.class
