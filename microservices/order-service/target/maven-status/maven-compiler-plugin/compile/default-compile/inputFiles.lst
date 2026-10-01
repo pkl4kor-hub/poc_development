@@ -1,8 +1,0 @@
-C:\bosch\poc\microservices\order-service\src\main\java\com\ecommerce\microservices\order\controller\OrderController.java
-C:\bosch\poc\microservices\order-service\src\main\java\com\ecommerce\microservices\order\entity\IdempotencyRecord.java
-C:\bosch\poc\microservices\order-service\src\main\java\com\ecommerce\microservices\order\entity\Order.java
-C:\bosch\poc\microservices\order-service\src\main\java\com\ecommerce\microservices\order\entity\OrderItem.java
-C:\bosch\poc\microservices\order-service\src\main\java\com\ecommerce\microservices\order\OrderServiceApplication.java
-C:\bosch\poc\microservices\order-service\src\main\java\com\ecommerce\microservices\order\repository\IdempotencyRepository.java
-C:\bosch\poc\microservices\order-service\src\main\java\com\ecommerce\microservices\order\repository\OrderRepository.java
-C:\bosch\poc\microservices\order-service\src\main\java\com\ecommerce\microservices\order\service\OrderSagaOrchestrator.java

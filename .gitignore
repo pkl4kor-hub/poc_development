@@ -2,3 +2,17 @@ backend/data/
 node_modules/
 test-results/
 *.log
+
+# Maven build outputs
+target/
+**/target/
+*.jar
+*.war
+
+# SQLite databases & runtime data
+*.db
+*.db-shm
+*.db-wal
+**/data/*.db
+**/data/*.db-shm
+**/data/*.db-wal

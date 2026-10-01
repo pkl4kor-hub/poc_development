@@ -1,8 +1,0 @@
-C:\bosch\poc\microservices\auth-service\src\main\java\com\ecommerce\microservices\auth\AuthServiceApplication.java
-C:\bosch\poc\microservices\auth-service\src\main\java\com\ecommerce\microservices\auth\config\DataInitializer.java
-C:\bosch\poc\microservices\auth-service\src\main\java\com\ecommerce\microservices\auth\controller\AuthController.java
-C:\bosch\poc\microservices\auth-service\src\main\java\com\ecommerce\microservices\auth\entity\User.java
-C:\bosch\poc\microservices\auth-service\src\main\java\com\ecommerce\microservices\auth\entity\UserSession.java
-C:\bosch\poc\microservices\auth-service\src\main\java\com\ecommerce\microservices\auth\repository\UserRepository.java
-C:\bosch\poc\microservices\auth-service\src\main\java\com\ecommerce\microservices\auth\repository\UserSessionRepository.java
-C:\bosch\poc\microservices\auth-service\src\main\java\com\ecommerce\microservices\auth\service\AuthService.java

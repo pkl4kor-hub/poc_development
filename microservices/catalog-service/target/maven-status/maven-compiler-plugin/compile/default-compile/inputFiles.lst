@@ -1,7 +1,0 @@
-C:\bosch\poc\microservices\catalog-service\src\main\java\com\ecommerce\microservices\catalog\CatalogServiceApplication.java
-C:\bosch\poc\microservices\catalog-service\src\main\java\com\ecommerce\microservices\catalog\config\DataInitializer.java
-C:\bosch\poc\microservices\catalog-service\src\main\java\com\ecommerce\microservices\catalog\controller\CatalogController.java
-C:\bosch\poc\microservices\catalog-service\src\main\java\com\ecommerce\microservices\catalog\controller\ChatbotController.java
-C:\bosch\poc\microservices\catalog-service\src\main\java\com\ecommerce\microservices\catalog\entity\Product.java
-C:\bosch\poc\microservices\catalog-service\src\main\java\com\ecommerce\microservices\catalog\repository\ProductRepository.java
-C:\bosch\poc\microservices\catalog-service\src\main\java\com\ecommerce\microservices\catalog\service\CatalogService.java
